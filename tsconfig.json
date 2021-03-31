@@ -7,7 +7,6 @@
     "outDir": "./dist",
     "strict": true,
     "noImplicitAny": true,
-    "lib": ["es5"],
     "strictNullChecks": false,
     "esModuleInterop": true
   },
