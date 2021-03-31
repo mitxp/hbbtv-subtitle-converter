@@ -1,0 +1,33 @@
+{
+  "name": "hbbtv-subtitle-converter",
+  "version": "1.0.0",
+  "description": "Server-side subtitle processing for HbbTV ARD.Player",
+  "private": true,
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "author": "MIT-xperts GmbH <info@mit-xperts.com>",
+  "license": "MIT-xperts GmbH Commercial, see LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:ard.de/ardplayer/hbbtv/addons/hbbtv-subtitle-converter.git"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "sha1": "^1.1.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/sha1": "^1.1.2",
+    "@types/xml2js": "^0.4.8",
+    "@typescript-eslint/parser": "^4.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "eslint": "^7.23.0",
+    "typescript": "^4.2.3"
+  }
+}
