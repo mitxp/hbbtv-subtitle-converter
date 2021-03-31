@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Server-side subtitle processing for HbbTV ARD.Player",
   "private": true,
-  "main": "src/main.ts",
+  "main": "dist/main.js",
+  "files": ["dist/**/*"],
   "scripts": {
     "build": "tsc",
+    "postinstall": "npm run build",
     "lint": "eslint . --ext .ts"
   },
   "engines": {
