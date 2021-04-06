@@ -4,6 +4,7 @@
   "description": "Server-side subtitle processing for HbbTV ARD.Player",
   "private": true,
   "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "files": ["dist/**/*"],
   "scripts": {
     "build": "tsc",
