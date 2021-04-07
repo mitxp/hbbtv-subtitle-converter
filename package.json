@@ -5,10 +5,11 @@
   "private": true,
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
-    "postinstall": "npm run build",
     "lint": "eslint . --ext .ts"
   },
   "engines": {
@@ -21,13 +22,13 @@
     "url": "git@gitlab.com:ard.de/ardplayer/hbbtv/addons/hbbtv-subtitle-converter.git"
   },
   "dependencies": {
-    "@types/sha1": "^1.1.2",
-    "@types/xml2js": "^0.4.8",
     "axios": "^0.21.1",
     "sha1": "^1.1.1",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
+    "@types/sha1": "^1.1.2",
+    "@types/xml2js": "^0.4.8",
     "@typescript-eslint/parser": "^4.20.0",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "eslint": "^7.23.0",
