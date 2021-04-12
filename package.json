@@ -19,7 +19,7 @@
   "license": "MIT-xperts GmbH Commercial, see LICENSE",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:ard.de/ardplayer/hbbtv/addons/hbbtv-subtitle-converter.git"
+    "url": "https://gitlab.com/ard.de/ardplayer/hbbtv/addons/hbbtv-subtitle-converter.git"
   },
   "dependencies": {
     "axios": "^0.21.1",
