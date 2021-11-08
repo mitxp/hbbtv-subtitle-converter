@@ -112,10 +112,32 @@ function decodeSpans(p) {
     }
     return ret;
 }
+function getSubtitleTimeOffset(divs) {
+    let count = 0;
+    let ret = 0;
+    for (const div of divs) {
+        if (!div.p) {
+            continue;
+        }
+        for (const p of div.p) {
+            const attribs = p.$ || {};
+            const begin = parseTime(attribs.begin);
+            const end = parseTime(attribs.end);
+            if (begin < 0 || end < begin) {
+                continue;
+            }
+            ret = begin - (begin % 3600000);
+            count++;
+            if (count > 1) {
+                return ret;
+            }
+        }
+    }
+    return ret;
+}
 function decodeSubtitles(divs) {
     const subtitles = {};
-    let timediff = 0;
-    let first = true;
+    let timediff = getSubtitleTimeOffset(divs);
     for (const div of divs) {
         if (!div.p) {
             continue;
@@ -123,14 +145,10 @@ function decodeSubtitles(divs) {
         const divAttribs = div.$ || {};
         for (const p of div.p) {
             const attribs = p.$ || {};
-            let begin = parseTime(attribs.begin);
-            let end = parseTime(attribs.end);
-            if (begin < 0 || end < begin) {
+            let begin = parseTime(attribs.begin) - timediff;
+            let end = parseTime(attribs.end) - timediff;
+            if (begin < 0 || end < begin || begin > 34000000) {
                 continue;
-            }
-            if (first) {
-                first = false;
-                timediff = begin - (begin % 3600000);
             }
             begin -= timediff;
             end -= timediff;
