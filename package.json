@@ -1,6 +1,6 @@
 {
   "name": "hbbtv-subtitle-converter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Server-side subtitle processing for HbbTV ARD.Player",
   "private": true,
   "main": "dist/main.js",

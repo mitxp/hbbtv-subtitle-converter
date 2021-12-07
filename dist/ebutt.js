@@ -150,8 +150,6 @@ function decodeSubtitles(divs) {
             if (begin < 0 || end < begin || begin > 34000000) {
                 continue;
             }
-            begin -= timediff;
-            end -= timediff;
             const style = validateChars(attribs.style || (divAttribs.style || ''), VALID_STYLE_NAME_CHARS);
             const region = validateChars(attribs.region || (divAttribs.region || ''), VALID_STYLE_NAME_CHARS);
             const tt = decodeSpans(p);
