@@ -142,7 +142,7 @@ function getSubtitleTimeOffset(divs: any[]): number {
 
 function decodeSubtitles(divs: any[]): ISubtitleText[] {
   const subtitles: {[key: string]: ISubtitleText} = {};
-  let timediff = getSubtitleTimeOffset(divs);
+  const timediff = getSubtitleTimeOffset(divs);
   for (const div of divs) {
     if (!div.p) {
       continue;
@@ -151,7 +151,7 @@ function decodeSubtitles(divs: any[]): ISubtitleText[] {
     for (const p of div.p) {
       const attribs = p.$ || {};
       let begin = parseTime(attribs.begin) - timediff;
-      let end = parseTime(attribs.end) - timediff;
+      const end = parseTime(attribs.end) - timediff;
       if (begin < 0 || end < begin || begin > 34000000) {
         continue;
       }
